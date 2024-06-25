@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     User selectUser(String userId);
-    void insertUser(User userEntity);
+    void insertUser(User user);
     void deleteUser(String userId);
-    void updateUser(User userEntity);
+    void updateUser(User user);
 }
