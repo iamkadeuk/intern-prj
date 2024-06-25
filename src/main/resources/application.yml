@@ -28,6 +28,7 @@ server:
 ---
 
 springdoc:
+  packages-to-scan: com.intern.project.approval
   default-consumes-media-type: application/json;charset=UTF-8
   default-produces-media-type: application/json;charset=UTF-8
   swagger-ui:
@@ -44,3 +45,15 @@ springdoc:
       disabled: true
 
 ---
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+---
+
+mybatis:
+#  config-location: classpath:mybatis/sqlmap_config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
