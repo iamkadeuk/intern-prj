@@ -23,7 +23,13 @@ spring:
 ---
 
 server:
+#  servlet:
+#    context-path: /api
+#    encoding:
+#      charset: UTF-8
+#      force-response: true
   port: 9100
+  shutdown: graceful
 
 ---
 
@@ -46,11 +52,11 @@ springdoc:
 
 ---
 
-spring:
-  http:
-    encoding:
-      charset: UTF-8
-      enabled: true
+#spring:
+#  http:
+#    encoding:
+#      charset: UTF-8
+#      enabled: true
 
 ---
 

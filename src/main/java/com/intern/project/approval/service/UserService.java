@@ -2,6 +2,7 @@ package com.intern.project.approval.service;
 
 import com.intern.project.approval.domain.User;
 import com.intern.project.approval.mapper.UserMapper;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

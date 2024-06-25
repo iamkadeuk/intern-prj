@@ -20,7 +20,7 @@ public class UserController {
 
     @Operation(description = "[테스트] 사용자 조회")
     @GetMapping(path = "/searchUser")
-    public ResponseEntity<User> searchUser(String userId) {
+    public ResponseEntity<User> searchUser(@RequestParam String userId) {
         User user = userService.getUser(userId);
         log.info("### user={}", user.toString());
         return new ResponseEntity<>(user, HttpStatus.OK);
@@ -28,14 +28,14 @@ public class UserController {
 
     @Operation(description = "[테스트] 사용자 삭제")
     @DeleteMapping(path = "/deleteUser")
-    public ResponseEntity deleteUser(String userId) {
+    public ResponseEntity deleteUser(@RequestParam String userId) {
         userService.removeUser(userId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Operation(description = "[테스트] 사용자 추가")
     @PostMapping(path = "/addUser")
-    public ResponseEntity<User> addUser(User user) {
+    public ResponseEntity<User> addUser(@RequestBody User user) {
         userService.putUser(user);
         User tmpUser = userService.getUser(user.getUserId());
         return new ResponseEntity<>(tmpUser, HttpStatus.OK);
@@ -43,7 +43,7 @@ public class UserController {
 
     @Operation(description = "[테스트] userId로 사용자 이름 수정")
     @PutMapping(path = "/modifyUserName")
-    public ResponseEntity<User> modifyUser(User user) {
+    public ResponseEntity<User> modifyUser(@RequestBody User user) {
         userService.modifyUser(user);
         User tmpUser = userService.getUser(user.getUserId());
         return new ResponseEntity<>(tmpUser, HttpStatus.OK);
