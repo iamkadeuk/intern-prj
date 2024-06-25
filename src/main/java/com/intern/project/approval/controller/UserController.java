@@ -19,16 +19,16 @@ public class UserController {
     private UserService userService;
 
     @Operation(description = "[테스트] 사용자 조회")
-    @GetMapping(path = "/searchUser")
-    public ResponseEntity<User> searchUser(@RequestParam String userId) {
+    @GetMapping(path = "/searchUser/{userId}")
+    public ResponseEntity<User> searchUser(@PathVariable String userId) {
         User user = userService.getUser(userId);
         log.info("### user={}", user.toString());
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @Operation(description = "[테스트] 사용자 삭제")
-    @DeleteMapping(path = "/deleteUser")
-    public ResponseEntity deleteUser(@RequestParam String userId) {
+    @DeleteMapping(path = "/deleteUser/{userId}")
+    public ResponseEntity deleteUser(@PathVariable String userId) {
         userService.removeUser(userId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
