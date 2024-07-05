@@ -1,4 +1,4 @@
-package com.bezkoder.spring.datajpa;
+package com.example.tutorials.intern;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

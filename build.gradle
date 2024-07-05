@@ -14,9 +14,11 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
     implementation 'com.mysql:mysql-connector-j'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-description = 'spring-boot-data-jpa'
+description = 'intern-prj'
 java.sourceCompatibility = JavaVersion.VERSION_21
