@@ -1,65 +1,12 @@
 spring:
-  application:
-    name: approval
-
----
-
-spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/common
+    url: jdbc:mysql://localhost:3306/common?useSSL=false
     username: mysql
     password: "!rhcnWkwkd4"
+---
+spring:
   jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQLDialect
-    show-sql: true
-    hibernate:
-      ddl-auto: update
     properties:
       hibernate:
-        format_sql: true
-
----
-
-server:
-#  servlet:
-#    context-path: /api
-#    encoding:
-#      charset: UTF-8
-#      force-response: true
-  port: 9100
-  shutdown: graceful
-
----
-
-springdoc:
-  packages-to-scan: com.intern.project.approval
-  default-consumes-media-type: application/json;charset=UTF-8
-  default-produces-media-type: application/json;charset=UTF-8
-  swagger-ui:
-    path: /swagger-ui/index.html
-    tags-sorter: alpha
-    operations-sorter: alpha
-    disable-swagger-default-url: true
-    display-request-duration: true
-  api-docs:
-    path: /v3/api-docs
-    groups:
-      enabled: true
-    cache:
-      disabled: true
-
----
-
-#spring:
-#  http:
-#    encoding:
-#      charset: UTF-8
-#      enabled: true
-
----
-
-mybatis:
-#  config-location: classpath:mybatis/sqlmap_config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
+        dialect: org.hibernate.dialect.MySQLDialect
+        ddl-auto: update
