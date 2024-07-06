@@ -1,4 +1,4 @@
-package com.example.tutorials.intern.model;
+package com.example.tutorials.intern.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "tutorials")
 public class Tutorial {
-//swagger 파라미터 더 풍부하게...
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
